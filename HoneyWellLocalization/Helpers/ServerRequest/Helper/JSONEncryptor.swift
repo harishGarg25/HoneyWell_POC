@@ -12,7 +12,7 @@ class JSONEncryptor{
     
     func convertToData(dict: Any) throws -> Data{
         do {
-            let jsonData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
+            let jsonData = try JSONSerialization.data(withJSONObject: dict, options: [])
             return jsonData
         } catch {
             throw error

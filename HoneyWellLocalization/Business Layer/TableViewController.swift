@@ -53,7 +53,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return UITableViewAutomaticDimension
     }
     
     func configureCell(cell : UITableViewCell) {
@@ -67,7 +67,10 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
             }
         case .HomeCell:
             if let actualCell = cell as? HomeListingCell {
-                actualCell.nameLabel.text = NSLocalizedString(self.data[cell.tag] as! String, tableName: "", bundle: HWLocalizationManager.sharedInstance.currentBundle, value: "", comment: "")
+                if let object = self.data[cell.tag] as? UserData
+                {
+                    actualCell.nameLabel.text = object.name
+                }
             }
         }
     }

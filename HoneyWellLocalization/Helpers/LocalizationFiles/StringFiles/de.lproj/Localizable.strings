@@ -1,17 +1,11 @@
-
-"key1" = "Erst nachdem wir alles verloren haben, können wir etwas tun.";
-"key2" = "Es gibt kein Entrinnen. Ich bin Gottes einsamer Mann.";
-"key3" = "Es ist eine alte Gewohnheit. Ich habe mein ganzes Leben lang versucht, nicht nachlässig zu sein. Frauen und Kinder können es sich leisten, nachlässig zu sein, aber nicht Männer.";
-"key4" = "Manchmal frage ich mich ... wird Gott uns jemals vergeben, was wir uns angetan haben? Dann schaue ich mich um und mir wird klar ... Gott hat diesen Ort vor langer Zeit verlassen.";
-"key5" = "Manchmal sind es genau die Menschen, die sich niemand vorstellen kann, wer die Dinge tut, die sich niemand vorstellen kann.";
-"key6" = "Mike McDermott: Hören Sie, hier ist die Sache. Wenn Sie den Sauger in Ihrer ersten halben Stunde am Tisch nicht sehen können, dann SIND Sie der Trottel.";
-"key7" = "Rudy Baylor: Was ist der Unterschied zwischen einem Anwalt und einer Nutte? Eine Nutte hört auf, dich zu verarschen, wenn du tot bist.";
-"key8" = "Ich hatte diesen schrecklichen Albtraum, dass ich 32 war. Und dann bin ich aufgewacht und ich war 23. So erleichtert. Und dann bin ich aufgewacht, ich war 32.";
-"key9" = "Warum verliebe ich mich in jede Frau, die mir die geringste Aufmerksamkeit schenkt?";
-"key10" = "Er ist der stille Held, ein wachsamer Beschützer! Der Batman!";
 "Next" = "Nächster";
 "Select Language" = "Sprache auswählen";
 "Login" = "Anmeldung";
 "Enter email here" = "Geben Sie hier Ihre email ein";
 "Enter password here" = "Passwort hier eingeben";
 "LOGIN" = "ANMELDUNG";
+"SUCCESS" = "ERFOLG";
+"OK" = "OK";
+"Customers" = "Kunden";
+"Done" = "Getan";
+"Cancel" = "Stornieren";

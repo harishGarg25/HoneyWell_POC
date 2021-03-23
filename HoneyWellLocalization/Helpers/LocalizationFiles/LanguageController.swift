@@ -73,7 +73,7 @@ class LanguageController: NSObject,LanguagePickerViewDelegate {
         viewController.view.addSubview(picker.toolbar!)
         viewController.view.addSubview(picker)
         if #available(iOS 11.0, *) {
-            bottomConstraintHidden = self.picker.bottomAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.bottomAnchor,constant: 250.0)
+            bottomConstraintHidden = self.picker.bottomAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.bottomAnchor,constant: 300.0)
             bottomConstraintVisible = self.picker.bottomAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.bottomAnchor,constant: 0.0)
             bottomConstraintHiddenToolBar = (self.picker.toolbar?.bottomAnchor.constraint(equalTo: self.picker.topAnchor,constant: 0.0))!
             NSLayoutConstraint.activate([
@@ -92,7 +92,7 @@ class LanguageController: NSObject,LanguagePickerViewDelegate {
         let button:UIButton = UIButton()
         button.tag = 1002
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Language", for: .normal)
+        button.setImage(UIImage.init(named: "translate"), for: .normal)
         button.setTitleColor(.red, for: .normal)
         button.addTarget(self, action: #selector(showOrHidePicker), for: .touchUpInside)
         viewController.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)

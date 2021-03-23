@@ -23,7 +23,7 @@ class HWLanguageServiceManager {
     }
     var labelView:UIVisualEffectView = UIVisualEffectView()
     var labelVerifying:UILabel = UILabel()
-    var spinner:UIActivityIndicatorView = UIActivityIndicatorView(style: .gray)
+    var spinner:UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     var languagesArray: [DictionaryLanguage]!
     
     func commonInit() {

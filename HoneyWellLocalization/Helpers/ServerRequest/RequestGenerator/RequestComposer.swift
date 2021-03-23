@@ -26,18 +26,17 @@ class RequestComposer: RequestComposerProtocol{
         guard let url = getUrl(urlStr: urlStr, queryItems: query) else{
             throw NetworkingError.invalidURL
         }
+        var urlRequest = URLRequest(url: url)
         var body: Data?
         if parameters != nil{
             do{
                 body = try encryptor.convertToData(dict: parameters!)
+                urlRequest.httpBody = body
             }catch{
                 throw error
             }
         }
-        
-        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
-        urlRequest.httpBody = body
         urlRequest.allHTTPHeaderFields = header
         
         return urlRequest

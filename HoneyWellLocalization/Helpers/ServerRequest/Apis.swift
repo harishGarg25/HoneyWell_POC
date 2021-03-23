@@ -22,15 +22,29 @@ struct ModuleApi: API{
 }
 
 struct APIS {
-    static let loginAPI = ModuleApi(endPoint: "Login/login")
+    static let login = ModuleApi(endPoint: "Login/login")
+    static let employeeList = ModuleApi(endPoint: "Values/customers")
 }
 
 struct Requests{
     
+    var requestHttpHeaders: [String:String] = [:]
+
     static func logInApi(params: [String : Any]) -> Request{
-        var request = Request(url: APIS.loginAPI, method: .get)
+        var request = Request(url: APIS.login, method: .post)
+        request.header = ["Content-Type" : "application/json"]
         request.body = params
+        return request
+    }
+    
+    static func employeeList(params: [String : String]) -> Request{
+        
+        var request = Request(url: APIS.employeeList, method: .get)
+        request.header = ["Content-Type" : "application/json"]
+        request.queryParam = params
         return request
     }
 
 }
+
+

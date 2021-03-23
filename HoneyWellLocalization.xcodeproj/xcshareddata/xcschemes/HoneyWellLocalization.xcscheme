@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3875D10F2609C288009FC464"
+               BuildableName = "HoneyWellLocalizationTests.xctest"
+               BlueprintName = "HoneyWellLocalizationTests"
+               ReferencedContainer = "container:HoneyWellLocalization.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

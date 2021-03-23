@@ -11,12 +11,20 @@ import Foundation
 //MARK: Userdefaults
 extension UserDefaults {
     
-    var languageType: String? {
-        return string(forKey: "languageType")
+    func setLoginStatus(_ bool: Bool) {
+        set(bool, forKey: "login")
     }
     
-    func setLanguageType(_ authorization: String) {
-        set(authorization, forKey: "languageType")
+    var isLoggedIn: Bool {
+        return bool(forKey: "login")
+    }
+    
+    var languageType: Int? {
+        if let language = UserDefaults.selectedLanguage as? String
+        {
+            return language == "en" ? 1 : 2
+        }
+        return 1
     }
     
     func clearAll() {

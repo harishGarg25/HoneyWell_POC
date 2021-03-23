@@ -24,6 +24,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        emailTextField.text = "admin"
+//        passwordTextField.text = "admin123"
         setUpView()
     }
     
@@ -60,7 +62,7 @@ extension LoginViewController
     func setUpView()  {
         emailTextField.placeholder = KEmailFieldPlaceholder.localize()
         passwordTextField.placeholder = KPasswordFieldPlaceholder.localize()
-        loginTitleLabel.text = KLoginTitle.localize()
+        //loginTitleLabel.text = KLoginTitle.localize()
         loginButton.setTitle(KLoginButtonTitle.localize(), for: .normal)
     }
 }
@@ -70,16 +72,19 @@ extension LoginViewController
     // MARK: API Call
     
     func hitRequest(params: [String:Any]){
+        self.view.showBlurLoader()
         let request = Requests.logInApi(params: params)
         do{
-            try router.hitServer(reuest: request) { (result) in
-                switch result{
-                case .success(let response):
-                    print("response", response)
-                    let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
-                    self.PushToScreen(screen: controller)
-                case .failure(let error):
-                    print("error",error)
+            try router.hitServer(reuest: request) { (result: Result<Login, Error>) in
+                DispatchQueue.main.async
+                {
+                    self.view.removeBluerLoader()
+                    switch result{
+                    case .success(let model):
+                        self.loginSuccess(message: model.message ?? "")
+                    case .failure(let error):
+                        print("error",error)
+                    }
                 }
             }
         }catch{
@@ -87,12 +92,23 @@ extension LoginViewController
         }
     }
     
+    func loginSuccess(message: String) {
+        self.showOptionAlert(title: "SUCCESS".localize(), message: message, button1Title: "OK".localize(), button2Title: "", completion: { (success) in
+            if success
+            {
+                UserDefaults.standard.setLoginStatus(true)
+                let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
+                self.PushToScreen(screen: controller)
+            }
+        })
+    }
+    
     func validate() {
         do {
             
             let email = try emailTextField.validatedText(validationType: ValidatorType.username)
             let username = try passwordTextField.validatedText(validationType: ValidatorType.password)
-            let data = ["userName": email ,"password": username ,"language": UserDefaults.selectedLanguage]
+            let data = ["userName": email ,"password": username ,"language": UserDefaults.standard.languageType ?? 1] as [String : Any]
             
             //API call to fetch data from server
             hitRequest(params: data)
@@ -101,4 +117,5 @@ extension LoginViewController
             self.showAlert(message: (error as! ValidationError).message)
         }
     }
+    
 }

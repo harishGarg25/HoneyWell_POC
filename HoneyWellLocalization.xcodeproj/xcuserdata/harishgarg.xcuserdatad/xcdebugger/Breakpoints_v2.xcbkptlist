@@ -5,18 +5,30 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            uuid = "BC3BC405-1541-4E7A-941D-6BDFF33A12CF"
+            uuid = "32313A72-FEE2-493A-95FC-B090495CC4A2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HoneyWellLocalization/Controllers/LoginViewController.swift"
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D280FD69-AAA8-4FD9-AEFA-E1461254C9E4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HoneyWellLocalization/Helpers/ServerRequest/Router/Router.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "hitRequest(params:)"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "responseHandler(data:error:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

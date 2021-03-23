@@ -14,3 +14,14 @@ extension String {
        return NSLocalizedString(self, tableName: "", bundle: HWLocalizationManager.sharedInstance.currentBundle, value: "", comment: "")
     }
 }
+
+class LocalisableLabel: UILabel {
+
+    @IBInspectable var localisedKey: String? {
+        didSet {
+            guard let key = localisedKey else { return }
+            text = key.localize()
+        }
+    }
+
+}

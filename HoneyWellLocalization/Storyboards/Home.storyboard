@@ -68,7 +68,7 @@
         <!--Navigation Controller-->
         <scene sceneID="miy-Tg-CMU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0bM-Sw-1OV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0bM-Sw-1OV" customClass="NavigationController" customModule="HoneyWellLocalization" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dym-BH-gDz">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

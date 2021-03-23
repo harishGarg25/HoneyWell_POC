@@ -47,7 +47,7 @@ enum ValidatorFactory {
 struct ProjectIdentifierValidator: ValidatorConvertible {
     func validated(_ value: String) throws -> String {
         do {
-            if try NSRegularExpression(pattern: "^[A-Z]{1}[0-9]{1}[-]{1}[0-9]{3}[A-Z]$",  options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
+            if try NSRegularExpression(pattern: KEmail,  options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
                 throw ValidationError("Invalid Project Identifier Format")
             }
         } catch {

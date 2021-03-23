@@ -38,11 +38,11 @@ class LanguagePickerView: UIPickerView,UIPickerViewDataSource,UIPickerViewDelega
         toolBar.isTranslucent = true
         toolBar.tintColor = .black
         toolBar.sizeToFit()
-        doneButton = UIBarButtonItem(title: NSLocalizedString(KDoneString.localize(), tableName: nil, bundle: HWLocalizationManager.sharedInstance.currentBundle, value: "", comment: ""), style: .plain, target: self, action: #selector(doneTapped))
+        doneButton = UIBarButtonItem(title: KDoneString.localize(), style: .plain, target: self, action: #selector(doneTapped))
         doneButton.tag = 100
         doneButton.tintColor = UIColor(displayP3Red: 45/255, green: 118/255, blue: 216/255, alpha: 1.0)
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        cancelButton = UIBarButtonItem(title:  NSLocalizedString(KCancelString.localize(), tableName: nil, bundle: HWLocalizationManager.sharedInstance.currentBundle, value: "", comment: ""), style: .plain, target: self, action: #selector(cancelTapped))
+        cancelButton = UIBarButtonItem(title:  KCancelString.localize(), style: .plain, target: self, action: #selector(cancelTapped))
         cancelButton.tag = 101
         
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
@@ -55,8 +55,8 @@ class LanguagePickerView: UIPickerView,UIPickerViewDataSource,UIPickerViewDelega
     }
     
     func updateViewForLocalisation()  {
-        self.doneButton.title = NSLocalizedString(KDoneString, tableName: nil, bundle: HWLocalizationManager.sharedInstance.currentBundle, value: "", comment: "")
-        self.cancelButton.title = NSLocalizedString(KCancelString, tableName: nil, bundle: HWLocalizationManager.sharedInstance.currentBundle, value: "", comment: "")
+        self.doneButton.title = KDoneString.localize()
+        self.cancelButton.title = KCancelString.localize()
     }
     
     @objc func doneTapped() {

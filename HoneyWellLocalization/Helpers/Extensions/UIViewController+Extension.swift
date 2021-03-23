@@ -19,7 +19,9 @@ extension UIViewController {
     }
     
     func PushToScreen(screen:UIViewController){
-        self.navigationController?.pushViewController(screen, animated: true)
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(screen, animated: true)
+        }
     }
     
     func performSegueToReturnBack()

@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-//All URL Keys
-let kMethodCheckUser = "checkUser"
-let kMethodSignUp = "signup"
-let kMethodLogout = "logout"
 
 //Signup Page error message
 let kOTPSmsVerify = "The SMS verification code is invalid."
@@ -22,9 +18,6 @@ let kEnterDescription = "Enter some description or query first."
 //Cell Identifiers
 let KHomeListingCell = "HomeListingCell"
 
-//Dummy Data
-let KLabels = ["key1","key2","key3","key4","key5","key6","key7","key8","key9","key10"]
-
 //Static strings used in:
 let KSelectLanguage = "Select Language"
 let KEmailFieldPlaceholder = "Enter email here"
@@ -33,6 +26,13 @@ let KLoginTitle = "Login"
 let KLoginButtonTitle = "LOGIN"
 let KDoneString = "Done"
 let KCancelString = "Cancel"
+let KCustomers = "Customers"
+
+
+//Validations
+let KEmail = "^[A-Z]{1}[0-9]{1}[-]{1}[0-9]{3}[A-Z]$"
+
+
 
 
 
